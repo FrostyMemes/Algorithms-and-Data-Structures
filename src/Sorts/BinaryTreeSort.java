@@ -6,6 +6,13 @@ public class BinaryTreeSort {
     public BinaryTreeSort right;      //Правый сын
     public int key;         //Значение
 
+    public BinaryTreeSort(int[] array)    //Конструктор для узла дерева
+    {
+        this.key = array[0];
+        for (int i = 1; i<array.length; i++) {
+            insert(new BinaryTreeSort(array[i]));
+        }
+    }
     public BinaryTreeSort(int key)    //Конструктор для узла дерева
     {
         this.key = key;
@@ -28,7 +35,7 @@ public class BinaryTreeSort {
         if (right != null) right.Print(visitor);
     }
 
-    class Printer                           //Класс для распечатывания
+    public static class Printer                           //Класс для распечатывания
     {
         public void visit(BinaryTreeSort node)
         {
