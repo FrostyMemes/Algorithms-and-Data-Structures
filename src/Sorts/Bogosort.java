@@ -22,10 +22,10 @@ public class Bogosort {
             swap(array, array[i], array[rnd(0, array.length)]);
     }
 
-    private void swap(int[] array, int first, int second){
-        int temp = array[first];
-        array[first] = array[second];
-        array[second] = temp;
+    private void swap(int[] array, int index1, int index2){
+        int temp = array[index1];
+        array[index1] = array[index2];
+        array[index2] = temp;
     }
 
     public static int rnd(int min, int max)

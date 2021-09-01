@@ -2,10 +2,10 @@ package Sorts;
 
 public class BubbleSort{
 
-    private void Swap(int[] array, int first, int second){
-        int temp = array[first];
-        array[first] = array[second];
-        array[second] = temp;
+    private void Swap(int[] array, int index1, int index2){
+        int temp = array[index1];
+        array[index1] = array[index2];
+        array[index2] = temp;
     }
 
     public int[] Sort(int[] array){

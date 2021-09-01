@@ -9,10 +9,11 @@ public class BinaryTreeSort {
     public BinaryTreeSort(int[] array)    //Конструктор для узла дерева
     {
         this.key = array[0];
-        for (int i = 1; i<array.length; i++) {
+        for (int i = 1; i < array.length; i++) {
             insert(new BinaryTreeSort(array[i]));
         }
     }
+
     public BinaryTreeSort(int key)    //Конструктор для узла дерева
     {
         this.key = key;
@@ -23,22 +24,20 @@ public class BinaryTreeSort {
         if (aTree.key < key)
             if (left != null) left.insert(aTree);
             else left = aTree;
-        else
-        if (right != null) right.insert(aTree);
+        else if (right != null) right.insert(aTree);
         else right = aTree;
     }
 
     public void Print(Printer visitor)  //Распечатывание инфиксной записью
     {
-        if (left != null)  left.Print(visitor);
+        if (left != null) left.Print(visitor);
         visitor.visit(this);
         if (right != null) right.Print(visitor);
     }
 
     public static class Printer                           //Класс для распечатывания
     {
-        public void visit(BinaryTreeSort node)
-        {
+        public void visit(BinaryTreeSort node) {
             System.out.print(" " + node.key);
         }
     }
