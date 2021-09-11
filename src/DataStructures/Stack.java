@@ -15,7 +15,7 @@ public class Stack <T>{
         }
     }
 
-   public Stack(){
+    public Stack(){
         Head = null;
     }
 

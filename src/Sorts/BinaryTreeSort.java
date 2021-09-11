@@ -2,11 +2,11 @@ package Sorts;
 
 public class BinaryTreeSort {
 
-    public BinaryTreeSort left;       //Левый сын
-    public BinaryTreeSort right;      //Правый сын
-    public int key;         //Значение
+    public BinaryTreeSort left;
+    public BinaryTreeSort right;
+    public int key;
 
-    public BinaryTreeSort(int[] array)    //Конструктор для узла дерева
+    public BinaryTreeSort(int[] array)
     {
         this.key = array[0];
         for (int i = 1; i < array.length; i++) {
@@ -14,12 +14,12 @@ public class BinaryTreeSort {
         }
     }
 
-    public BinaryTreeSort(int key)    //Конструктор для узла дерева
+    public BinaryTreeSort(int key)
     {
         this.key = key;
     }
 
-    public void insert(BinaryTreeSort aTree)      //Вставка
+    public void insert(BinaryTreeSort aTree)
     {
         if (aTree.key < key)
             if (left != null) left.insert(aTree);
@@ -28,14 +28,14 @@ public class BinaryTreeSort {
         else right = aTree;
     }
 
-    public void Print(Printer visitor)  //Распечатывание инфиксной записью
+    public void Print(Printer visitor)
     {
         if (left != null) left.Print(visitor);
         visitor.visit(this);
         if (right != null) right.Print(visitor);
     }
 
-    public static class Printer                           //Класс для распечатывания
+    public static class Printer
     {
         public void visit(BinaryTreeSort node) {
             System.out.print(" " + node.key);
