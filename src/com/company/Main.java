@@ -9,12 +9,11 @@ import java.awt.desktop.SystemEventListener;
 public class Main {
 
     public static void main(String[] args) {
-        int[] array1 = new int[] {1,2,3,4,5};
-        FastSort sorting = new FastSort();
+        int[] array1 = new int[] {111,100};
+        ShellSort sorting = new ShellSort();
         array1=sorting.Sort(array1);
         print(array1);
-     //  array1=sorting.Sort(array1);
-      // print(array1);
+
     }
 
     static public void print(int[] array){
