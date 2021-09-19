@@ -5,7 +5,7 @@ public class Queue <T>{
     Node Front;
     Node Back;
 
-    class Node <T> {
+    private class Node <T> {
 
         Node next;
         T item;
@@ -21,7 +21,7 @@ public class Queue <T>{
         Back = null;
     }
 
-    public boolean Empty(){
+    public boolean IsEmpty(){
         return Front == null;
     }
 
@@ -35,18 +35,17 @@ public class Queue <T>{
         Back = nNode;
     }
 
-    public T Poll(){
+    public T Pop(){
 
         T item = null;
-        if (!Empty()) {
+        if (!IsEmpty()) {
             item = (T) Front.item;
             if (Front!=Back) {
                 Node pNode = Back;
                 while (pNode.next != Front)
                     pNode = pNode.next;
                 Front = pNode;
-            }
-            else{
+            } else{
                 Front = null;
                 Back = null;
             }
@@ -55,7 +54,7 @@ public class Queue <T>{
     }
 
     public T Peek(){
-        if (!Empty())
+        if (!IsEmpty())
             return (T)Front.item;
         else
             return null;
@@ -63,8 +62,8 @@ public class Queue <T>{
 
 
     public void Clear(){
-        while (!Empty())
-            Poll();
+        while (!IsEmpty())
+            Pop();
     }
 
     public int Size(){

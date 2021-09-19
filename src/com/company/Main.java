@@ -1,7 +1,8 @@
 package com.company;
 
-import DataStructures.Queue;
-import DataStructures.Stack;
+
+import DataStructures.BinaryHeap;
+import DataStructures.Deque;
 import Sorts.*;
 
 import java.awt.desktop.SystemEventListener;
@@ -9,11 +10,16 @@ import java.awt.desktop.SystemEventListener;
 public class Main {
 
     public static void main(String[] args) {
-        int[] array1 = new int[] {111,100};
-        ShellSort sorting = new ShellSort();
-        array1=sorting.Sort(array1);
-        print(array1);
-
+        int[] array = new int[] {111,100,30};
+        Deque<Integer> Deq = new Deque<Integer>();
+        for (int i:
+             array) {
+            Deq.PushBack(i);
+        }
+        while (!Deq.IsEmpty()){
+            int res = Deq.PopBack();
+            System.out.print(res+" ");
+        }
     }
 
     static public void print(int[] array){

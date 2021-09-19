@@ -8,16 +8,15 @@ public class ShackeSort {
         while (Left<Right)
         {
             for (int i = Left; i < Right; i++)
-            {
                 if (array[i] > array[i + 1])
                     swap(array,i,i+1);
-            }
+
             Right--;
+
             for (int i = Right; i > Left; i--)
-            {
                 if (array[i-1] > array[i])
                     swap(array, i-1,i);
-            }
+
             Left++;
         }
         return array;

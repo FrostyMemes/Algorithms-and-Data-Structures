@@ -14,13 +14,13 @@ public class BinaryTreeSort {
         }
     }
 
-    public BinaryTreeSort(int key)
-    {
+    public BinaryTreeSort(int key) {
+
         this.key = key;
     }
 
-    public void insert(BinaryTreeSort aTree)
-    {
+    public void insert(BinaryTreeSort aTree) {
+
         if (aTree.key < key)
             if (left != null) left.insert(aTree);
             else left = aTree;
@@ -28,15 +28,15 @@ public class BinaryTreeSort {
         else right = aTree;
     }
 
-    public void Print(Printer visitor)
-    {
+    public void Print(Printer visitor) {
+
         if (left != null) left.Print(visitor);
         visitor.visit(this);
         if (right != null) right.Print(visitor);
     }
 
-    public static class Printer
-    {
+    public static class Printer {
+
         public void visit(BinaryTreeSort node) {
             System.out.print(" " + node.key);
         }

@@ -1,29 +1,32 @@
 package DataStructures;
 
-public class Stack <T>{
+public class Stack<T> {
 
     Node Head;
 
-    class Node <T> {
+    class Node {
 
         Node next;
         T item;
 
-        Node(T item, Node next){
+        Node(T item, Node next) {
+
             this.item = item;
             this.next = next;
         }
     }
 
-    public Stack(){
+    public Stack() {
         Head = null;
     }
 
-    public boolean Empty(){
+    public boolean Empty() {
+
         return Head == null;
     }
 
-    public void Push(T item){
+    public void Push(T item) {
+
         Head = new Node(item, Head);
     }
 
@@ -37,22 +40,24 @@ public class Stack <T>{
         return item;
     }
 
-    public T getHead(){
-        if(!Empty())
+    public T getHead() {
+
+        if (!Empty())
             return (T) Head.item;
         else
             return null;
     }
 
-    public void Clear(){
+    public void Clear() {
+
         while (!Empty())
             Pop();
     }
 
-    public int Size(){
+    public int Size() {
         int itemCount = 0;
         Node pNode = Head;
-        while(pNode!=null) {
+        while (pNode != null) {
             pNode = pNode.next;
             itemCount++;
         }

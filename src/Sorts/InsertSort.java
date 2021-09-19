@@ -4,6 +4,7 @@ public class InsertSort {
 
 
     public int[] Sort (int[] array){
+
         for(int i=1;i<array.length;i++)
             for(int j=i;j>0 && array[j-1]>array[j];j--)
                 swap(array, j-1, j);
