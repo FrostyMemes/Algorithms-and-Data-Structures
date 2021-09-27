@@ -10,16 +10,10 @@ import java.awt.desktop.SystemEventListener;
 public class Main {
 
     public static void main(String[] args) {
-        int[] array = new int[] {111,100,30};
-        Deque<Integer> Deq = new Deque<Integer>();
-        for (int i:
-             array) {
-            Deq.PushBack(i);
-        }
-        while (!Deq.IsEmpty()){
-            int res = Deq.PopBack();
-            System.out.print(res+" ");
-        }
+        int[] array = new int[] {111,100,30,2,54,65,23,89,1111,2343};
+        CombSort sorter = new CombSort();
+        sorter.Sort(array);
+        print(array);
     }
 
     static public void print(int[] array){
