@@ -11,8 +11,8 @@ public class Main {
 
     public static void main(String[] args) {
         int[] array = new int[] {111,100,30,2,54,65,23,89,1111,2343};
-        CombSort sorter = new CombSort();
-        sorter.Sort(array);
+        GnomeSort sorter = new GnomeSort();
+        array =  sorter.Sort(array);
         print(array);
     }
 
